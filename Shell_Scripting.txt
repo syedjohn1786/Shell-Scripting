@@ -1,0 +1,202 @@
+1) cat /etc/os-release
+
+This command will display specific details about your Linux distribution and version
+
+2) echo $0
+
+This command will display which type of shell we are using
+
+3) cat /etc/shells
+
+This command will dispaly different types of shells present in our Linux distribution
+
+4) How to run a Script ?
+
+Step 1 : Make sure script has execute permission (rwx)
+step 2 : Run the script using => bash hello.sh   or    /path_to_script/hello.sh   or   ./hello.sh(use this if your script is in current directory)  
+step 3 : ctrl+c to terminate , ctrl+z to stop the script
+
+5) How to add comments in shell scripting ?
+
+#This is a single-line comment
+
+<<comment
+
+This 
+is 
+multi-line comment example
+
+comment
+
+=====================================================================================================================================================
+
+					Variables
+				====================================
+
+6) How to declare and access a variable in shell scripting ?
+
+first_name="john"
+age=20
+
+echo "my name is $first_name and i am $age years old"
+
+ouput : my name is john and i am 20 years old
+
+
+7) How to store the output of a command in a variable and access through variable ?
+
+HOSTNAME=$(hostname)
+
+echo "name of the system is $HOSTNAME"
+
+output : name of the system is redhat01   
+(since hostname is a command which gives the name of current host system)
+
+
+8) How to declare a constant variable (which does not change throughout the script once declared)
+
+readonly first_name="kiran"
+
+
+=====================================================================================================================================================
+
+					Arrays
+				=================================
+
+9) How to declare and access an Array in Shell Scripting ?
+
+myArray=( 4 7 8 "john" "kiran" )
+
+echo "${myArray[0]}
+
+echo "All the elements in array are ${myArray[*]}"
+
+
+10) How to find the length of an Array ?
+
+echo "length of the array is ${#myArray[*]}"
+
+
+11) How to update an Array ?
+
+myArray+=( 9 2 4 );
+
+
+12) Key-value pairs in Array
+
+declare -A myArray
+myArray=( [name]=john [age]=20 );
+
+echo "my name is ${myArray[name] and my age is ${myArray[age]}"
+
+
+=========================================================================================================================================================
+
+						String Operations
+					===============================
+
+13) myString="Hello welcome there"
+
+length of the string =>  echo ${#myString}
+convert to uppercase => echo ${myString^^}
+convert to lowercase => echo ${myString,,}
+replace a word with another word => echo ${myString/Hello/Hii}
+slice a given string => echo ${myString:6:7}    => it prints welcome
+
+=========================================================================================================================================================
+
+						Taking input from User
+					===================================
+
+14) Print the name of a person by taking input from the user
+
+read name;
+echo "name of the person is $name"
+
+#you need to enter name of the person after running the shell script file
+
+==========================================================================================================================================================
+
+						Arithmetic Operations
+					===================================
+
+15) Multiply two numbers in shell scripting 
+
+a=2
+b=5
+
+mul = $a*$b
+
+echo $mul
+
+output => 2*5  (this is not the correct method)
+
+
+YOU NEED TO USE "let" for an expression
+
+let mul = $a*$b
+
+echo $mul
+
+output => 10
+
+
+YOU CAN USE BELOW METHOD ALSO
+
+echo "multiplication is $(($a*$b))"
+
+output => multiplication is 10
+
+
+====================================================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
