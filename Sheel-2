@@ -1,0 +1,71 @@
+                                            Functions in shell scripting
+                                ===================================================
+#syntax to create a function
+function myfun {
+  echo "entering inside the function"
+}
+
+#second way of syntax to create a function
+myfun() {
+  echo "entering inside the function"
+}
+
+#syntax to call a function
+myfun
+--------------------------------------------
+Connectivity check script
+
+ping -c 1 www.google.com
+
+echo $? (this command will give the previous command successful or not)
+output : 0 ( we got 0 i.e successful, 1 means not success)
+-----------
+#shell script to check connectivity
+read -p "please enter the website you want to enter" website
+ping -c 1 $website
+
+if [[ $? -eq 0 ]]
+then
+      echo "successfully connected to $website"
+else
+      echo "unable to connect $website"
+fi
+
+--------------------------------------------
+
+#check if file exists or not
+if [ -f file_name ]  (if file exists)
+if [ ! -f file_name ]  (if file not exists)
+
+#check if folder exists or not
+if [ -d folder_name ]  (if folder exists)
+if [ ! -d folder_name ]  (if folder not exists)
+
+-------------------------------------------------
+Redirection in shell scripting ( > , >>)
+#Redirection means keeping output of command inside a file instead of printing output on terminal
+#for example print the current working directory in a file
+pwd > outputfile.txt
+
+# '>' is used to overide the content of the file and keeps the output of the command (suppose in outputfile.txt there are 10 lines, but after running pwd > outfile.txt command  ....those 10 lines will be deleted , only pwd command output is stored
+# '>>' is also used as '>' but do not overides the previous content
+
+--------------------------------------------------
+#how to print the name of your script
+echo "name of our scipt is ${0}"
+
+#${0} gives you the name of the script
+
+-------------------------------------------------------
+Log Messages
+#if you wan to maintain the logging for your script, you the word "logger" in your script
+#you can find the logs under /var/logs/messages
+
+Ex :
+
+logger "this is log from script ${0}"
+
+-----------------------------------------------------------
+
+
+
