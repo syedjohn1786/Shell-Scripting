@@ -150,7 +150,73 @@ output => multiplication is 10
 
 ====================================================================================================================================================
 
+					Operators
+				=============================
 
+Equal			-eq/==
+Greaterthanorequalto 	-ge
+Lessthanorequalto	-le
+Not equal		-ne/!=
+Greater Than		-gt
+Less than		-lt
+
+==========================================================================================================================
+
+read -p "enter your marks" marks
+
+if [ $marks -gt 60 ]
+then
+	echo " passed"
+else
+	echo "failed"
+fi
+
+--------------------------------------
+
+read -p "enter your marks" marks
+if [ $marks -gt 80 ]
+then
+	echo "grade A"
+elif [ $marks -gt 60 ]
+then
+	echo "grade B"
+elif [ $marks -gt 50 ]
+then
+	echo "grade C"
+else
+	echo "failed"
+fi
+
+=========================================================================================================================
+
+						For Loop
+					===============================
+
+for i in 1 2 3 4 5
+do
+	echo "numbers are $i"
+done
+-----------------------------------------------
+for i in {1..20}
+for j in John Anil Khaja
+-------------------------------------------------
+Getting values from a file using for loop :
+
+FILE = "/path to file/names.txt"
+for name in $(cat $FILE)
+do
+	echo "$name"
+done
+----------------------------------------------------
+for loop using with Arrays
+
+myArray = (4 5 john khaja)
+len = ${#myArray[*]}
+for (( i=0;i<$len;i++ ))
+do
+	echo "value : ${myArray[$i]}"
+done
+=========================================================================================================================
 
 
 
